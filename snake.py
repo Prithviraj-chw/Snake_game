@@ -1,4 +1,4 @@
-SNAKE_POSITIONS = [(0,0) , (20,0) , (40,0)]
+SNAKE_POSITIONS = [(0,0) , (-20,0) , (-40,0)]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -9,14 +9,22 @@ class Snake:
     def __init__(self):
         self.snake_segments = []
         self.create_snake()
+        self.head = self.snake_segments[0]
 
     def create_snake(self):
         for position in SNAKE_POSITIONS:
-            snake = Turtle("square")
-            snake.penup()
-            snake.color("white")
-            snake.goto(position)
-            self.snake_segments.append(snake)
+            self.add_segment(position)
+
+
+    def add_segment(self,position):
+        snake = Turtle("square")
+        snake.penup()
+        snake.color("white")
+        snake.goto(position)
+        self.snake_segments.append(snake)
+
+    def extend_snake(self):
+        self.add_segment(self.snake_segments[-1].position()) #.position() is a turtle method -> returns the x,y coords of the snake's tail
 
     def move_snake(self):
         for seg_num in range(len(self.snake_segments) - 1, 0, -1):
