@@ -2,7 +2,7 @@
 
 A nostalgic, arcade-style Snake game built from scratch in Python using the standard `turtle` graphics module — no external libraries required.
 
-> ⚠️ **Work in Progress** — This project is actively being developed. Features like food spawning, collision detection, and score tracking are coming soon.
+> ⚠️ **Work in Progress** — This project is actively being developed. Features like High score tracking are coming soon.
 
 ---
 
